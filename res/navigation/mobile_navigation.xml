@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.travelbucket.ui.home.HomeFragment"
+        android:label="Popular Places"
+        tools:layout="@layout/fragment_home"
+
+        >
+        <action
+            android:id="@+id/action_nav_home_to_nav_travel_place_details"
+            app:destination="@id/nav_travel_place_details" />
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/nav_travel_place_details"
+        android:name="com.example.travelbucket.ui.home.TravelPlaceDetailsFragment"
+        android:label="Travel Place Details"
+        tools:layout="@layout/fragment_travel_place_details">
+        <argument
+            android:name="travelPlaceId"
+            app:argType="string" /> <!-- Using _id from TravelPlace -->
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_stored_travel_places"
+        android:name="com.example.travelbucket.ui.home.StoredTravelPlacesFragment"
+        android:label="Saved Travel Places"
+        tools:layout="@layout/fragment_stored_travel_places" />
+
+
+</navigation>
